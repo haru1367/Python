@@ -7,12 +7,19 @@ count = 0
 def card_append(card):
     print('명함에 정보를 추가합니다.')
     name = input('이름:')
-    address = input('주소:')
-    phone = input('전화번호:')
-    email = input('이메일:')
-    global count
-    count+=1
-    card.append([count,name,address,phone,email])
+    check = False
+    for i in range(0,len(card)):
+        if card[i][1].lower() == name.lower():
+            print('이미 명함이 존재합니다!')
+            check = True
+            break
+    if check == False:
+        address = input('주소:')
+        phone = input('전화번호:')
+        email = input('이메일:')
+        global count
+        count+=1
+        card.append([count,name,address,phone,email])
     return card
 
 def print_card(card):
@@ -35,10 +42,24 @@ def modify_card(card):
 def delete_card(card):
     data = int(input('삭제할 데이터의 번호를 입력하세요 : '))
     del(card[data-1])
+    global count
+    count -=1
     for index in range(1,len(card)+1):
         card[index-1][0] = index
     print('삭제가 완료되었습니다')
     return card
+
+def search_name(card):
+    data = input('검색할 이름을 입력해주세요 : ')
+    check = False
+    for i in range(0,len(card)):
+        if card[i][1].lower() == data.lower():
+            print(card[i])
+            check = True
+            break
+    if check == False:
+        print('해당 정보를 찾을 수 없습니다.')
+
 
 while True:
     menu = input('''
@@ -55,7 +76,7 @@ while True:
     elif menu == '4':
         print_card(card)
     elif menu == '5':
-        pass
+        search_name(card)
     elif menu == '6':
         pass
     elif menu == '7':
