@@ -28,16 +28,20 @@ def print_card(card):
 
 def modify_card(card):
     data = int(input('수정할 데이터의 번호를 입력하세요 : '))
-    num = int(input('''
-1.이름 수정
-2.주소 수정
-3.전화번호 수정
-4.이메일 수정
+    global count
+    if data > count:
+        print('숫자 입력이 잘못되었습니다.')
+    else:
+        num = int(input('''
+    1.이름 수정
+    2.주소 수정
+    3.전화번호 수정
+    4.이메일 수정
                     
->>> 수정할 내용을 골라주세요 : '''))
-    modify = input('바꿀 내용 : ')
-    card[data-1][num] = modify
-    print('수정이 완료되었습니다!')
+    >>> 수정할 내용을 골라주세요 : '''))
+        modify = input('바꿀 내용 : ')
+        card[data-1][num] = modify
+        print('수정이 완료되었습니다!')
 
 def delete_card(card):
     data = int(input('삭제할 데이터의 번호를 입력하세요 : '))
