@@ -41,11 +41,11 @@
 #     for customer in customer_USA_only_list:
 #         customer_USA_only_csv.write(",".join(customer).strip('\n')+'\n')
 
-import csv
+# import csv
 
-seoung_nam_data=[]
-header=[]
-rownum=0
+# seoung_nam_data=[]
+# header=[]
+# rownum=0
 
 # with open("study/korea_floating_population_data.csv",'r',encoding = 'cp949') as p_file:
 #     csv_data = csv.reader(p_file)
@@ -63,7 +63,7 @@ rownum=0
 #     for row in seoung_nam_data:
 #         writer.writerow(row)
 
-# import logging
+import logging
 
 # logging.debug('개발 시점에 프로그램이 문제없이 실행되는지 확인하기 위해 출력하는 결과')
 # logging.info('사용자에게 실행 결과를 알려주는 로그 정보')
@@ -81,14 +81,28 @@ rownum=0
 # logger.error('에러났어')
 # logger.critical('망했다')
 
-import configparser
+# import configparser
 
-config = configparser.ConfigParser()
-config.sections()
-config.read("study/example.cfg")
-config.sections()
-for key in config['SectionOne']:
-    print(key)
-config['SectionOne']['status']
+# config = configparser.ConfigParser()
+# config.sections()
+# config.read("study/example.cfg")
+# config.sections()
+# for key in config['SectionOne']:
+#     print(key)
+# config['SectionOne']['status']
+
+# logger = logging.getLogger('myapp')
+# hdlr = logging.FileHandler('myapp.log')
+
+# formatter = logging.Formatter('%(asctime)s %(levelname)s %(process)d %(message)s')
+
+# hdlr.setFormatter(formatter)
+# logger.addHandler(hdlr)
+# logger.setLevel(logging.INFO)
+
+# logger.error('ERROR occured')
+# logger.info('HERE WE ARE')
+# logger.info('TEST finished')
+
 
 
