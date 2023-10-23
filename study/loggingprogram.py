@@ -13,7 +13,7 @@ customer=None
 
 logger.info('Open file {0}'.format('TEST',))
 try:
-    with open("study/customer.csv",'r')as customer_data:
+    with open("study/customers.csv",'r')as customer_data:
         customer_reader = csv.reader(customer_data,delimiter=',',quotechar='"')
         for customer in customer_reader:
             if customer[10].upper() == "USA":
