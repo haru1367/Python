@@ -54,3 +54,4 @@ index_list = re.findall("(\<dd\>)([\s\S]+?)(\<\/dd\>)", samsung_index)
 
 for index in index_list:
     print(index[1])
+
